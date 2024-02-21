@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset=" UTF-8" />
+    <title>Contact</title>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar is-dark is-white" role="navigation" aria-label="main navigation">
+        <!-- logo info -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://github.com/Will-Emery">
+                <img src="../public/assets/GitHub-Logo.png" alt="My github" style="max-height: 35px;">
+            </a>
+            <h1 class="title mt-2 mb-1" style="color: antiquewhite;">Will Emery</h1>
+            <a href="" class="navbar-burger" id="burger" data-target="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <!-- links -->
+        <div class="navbar-menu" id="nav-links">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Home</a>
+                <a href="about_me.html" class="navbar-item">About Me</a>
+                <a href="contact.html" class="navbar-item">Contact</a>
+                <a href="blog.html" class="navbar-item">Blog</a>
+                <a href="projects.html" class="navbar-item">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero for page consitency -->
+    <section class="hero is-light">
+        <div class="container">
+            <div class="hero-body">
+                <p class="title">Contact Me</p>
+                <p class="subtitle">Questions, comments, concerns? Send me an email!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <table width="80%">
+        <tr>
+            <td bgcolor="lightgreen">
+                <form method="GET" action="mailto:will.emery@du.edu">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name.." required />
+                    <br />
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Your email.." required />
+                    <br />
+                    <label for="subject">Subject:</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px" cols="55"
+                        required></textarea>
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="lightpink">
+                <p>Or if you prefer, here is a picture of a hedgehog from my time in Finland</p>
+                <img src="./images/hedgehog.jpg" alt="Hedgehog" width="400" height="300" /></center>
+            </td>
+        </tr>
+    </table>
+
+    <!--Script for Hamburger menu-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        event.preventDefault(); //prevent default action of link
+                        // Get the target from the "data-target" attribute
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+
+                        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
+            }
+
+        });
+    </script>
+</body>
+
+</html>
